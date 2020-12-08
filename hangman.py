@@ -197,7 +197,7 @@ def main_match_win_or_lose(guesses_left, letters_guessed, secret_word, warnings_
             #Game with hints activated
             show_possible_matches(get_guessed_word(secret_word, letters_guessed))
             continue
-        if guessed_letter.isalpha():
+        if guessed_letter.isalpha() and len(guessed_letter) == 1 and guessed_letter.isascii():
             guessed_letter = guessed_letter.lower()
         else:
             #System of losing warnings/guesses activated
